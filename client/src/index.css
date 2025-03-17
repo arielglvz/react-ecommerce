@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+@theme {
+  --color-whiteText: #ffff;
+  --color-darkText: #000000;
+  --color-lightText: #9b9b9b;
+  --color-greenText: #1d8221;
+  --color-redText: #E02B2B;
+  --color-skyText: #32BDE8;
+
+  /* --font-display: "Oswald", "sans-serif"; */
+
+  /* --aspect-retro: 4 / 3; */
+}
+
+html, 
+body {
+  touch-action: manipulation;
+}
