@@ -16,7 +16,7 @@ export const categories = [
   {
     _id: 1001,
     name: "TV & Audio",
-    image: "https://i.ibb.co/kM0FR2h/cat-Tv-Audio.webp",
+    image: "https://static.vecteezy.com/system/resources/previews/050/756/176/large_2x/modern-tv-with-speakers-and-soundbar-setup-free-png.png",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis repellendus dolore.",
     _base: "tvAndAudio",
@@ -24,7 +24,7 @@ export const categories = [
   {
     _id: 1002,
     name: "TV Box",
-    image: "https://i.ibb.co/71hR65V/catTvBox.webp",
+    image: "https://png.pngtree.com/png-clipart/20250218/original/pngtree-android-smart-tv-box-png-image_20459582.png",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis repellendus dolore.",
     _base: "tvBox",
@@ -32,7 +32,7 @@ export const categories = [
   {
     _id: 1003,
     name: "Power Tools",
-    image: "https://i.ibb.co/0V0g6Gz/cat-Powertool.webp",
+    image: "https://static.vecteezy.com/system/resources/previews/052/243/885/non_2x/electric-drill-isolated-on-transparent-background-png.png",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis repellendus dolore.",
     _base: "powerTools",
@@ -40,7 +40,7 @@ export const categories = [
   {
     _id: 1004,
     name: "Headphones",
-    image: "https://i.ibb.co/zST2Xdp/cat-Headphone.webp",
+    image: "https://static.vecteezy.com/system/resources/previews/024/558/883/non_2x/black-wireless-headphones-isolated-on-transparent-background-ai-generated-png.png",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis repellendus dolore.",
     _base: "headphones",
@@ -48,7 +48,7 @@ export const categories = [
   {
     _id: 1005,
     name: "Cell Phones",
-    image: "https://i.ibb.co/jgk59BL/catPhone.webp",
+    image: "https://static.vecteezy.com/system/resources/previews/054/679/668/non_2x/abstract-colorful-smartphone-screen-free-png.png",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis repellendus dolore.",
     _base: "cellPhones",
@@ -56,7 +56,7 @@ export const categories = [
   {
     _id: 1006,
     name: "Smart Watches",
-    image: "https://i.ibb.co/B4NKfBZ/cat-Smart-Watch.webp",
+    image: "https://static.vecteezy.com/system/resources/previews/055/181/798/large_2x/apple-watch-silver-band-smartwatch-display-apps-time-free-png.png",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis repellendus dolore.",
     _base: "smartWatches",
@@ -64,7 +64,7 @@ export const categories = [
   {
     _id: 1007,
     name: "Game & Video",
-    image: "https://i.ibb.co/4gwLwT2/cat-Gaming.webp",
+    image: "https://static.vecteezy.com/system/resources/previews/013/007/612/large_2x/set-of-console-game-device-handheld-portable-free-png.png",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis repellendus dolore.",
     _base: "gameAndVideo",
@@ -72,7 +72,7 @@ export const categories = [
   {
     _id: 1008,
     name: "Robot Clean",
-    image: "https://i.ibb.co/xjpdQrr/cat-Robot-Clean.webp",
+    image: "https://static.vecteezy.com/system/resources/previews/056/706/441/large_2x/luxury-business-traveler-with-luggage-working-on-laptop-airport-lounge-digital-art-modern-environment-close-up-perspective-free-png.png",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis repellendus dolore.",
     _base: "robotClean",
@@ -80,7 +80,7 @@ export const categories = [
   {
     _id: 1009,
     name: "Sport Watches",
-    image: "https://i.ibb.co/HdNVLzh/cat-Sport-Watch.webp",
+    image: "https://static.vecteezy.com/system/resources/previews/021/478/893/large_2x/watch-isolated-on-transparent-free-png.png",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis repellendus dolore.",
     _base: "sportWatches",
@@ -88,7 +88,7 @@ export const categories = [
   {
     _id: 1010,
     name: "Tablets",
-    image: "https://i.ibb.co/qCzTx4F/cat-Tablet.webp",
+    image: "https://static.vecteezy.com/system/resources/previews/054/589/947/large_2x/colorful-medication-tablet-on-transparent-surface-free-png.png",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis repellendus dolore.",
     _base: "tablets",
@@ -96,7 +96,7 @@ export const categories = [
   {
     _id: 1011,
     name: "Computers & Laptop",
-    image: "https://i.ibb.co/74bZ8PH/cat-Computer.webp",
+    image: "https://static.vecteezy.com/system/resources/previews/047/824/500/large_2x/high-quality-realistic-beautiful-computer-monitor-image-free-png.png",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis repellendus dolore.",
     _base: "computersAndLaptop",
@@ -104,7 +104,7 @@ export const categories = [
   {
     _id: 1012,
     name: "Cameras & Photos",
-    image: "https://i.ibb.co/SVQVWSS/cat-Camera.webp",
+    image: "https://static.vecteezy.com/system/resources/previews/036/746/240/large_2x/ai-generated-3d-camera-isolated-on-transparent-background-free-png.png",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis repellendus dolore.",
     _base: "camerasAndPhotos",
