@@ -24,7 +24,7 @@ const Highlights = () => {
 
 
   return (
-    <Container className='grid grid-cols-3 md:grid-cols-2 lg:grid-cols-3 gap-8'>
+    <Container className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
       {highlightsData.map((item:HighlightsType) => (
         <div key={item?._id} className="relative h-60 rounded-lg shadow-md cursor-pointer overflow-hidden group">
           <div 
