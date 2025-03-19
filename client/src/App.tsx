@@ -1,4 +1,5 @@
 import BannerCategories from "./ui/BannerCategories"
+import Blog from "./ui/Blog"
 import Categories from "./ui/Categories"
 import Container from "./ui/Container"
 import DiscountedBanner from "./ui/DiscountedBanner"
@@ -16,7 +17,7 @@ function App() {
       <Categories />
       <ProductList />
       <DiscountedBanner />
-      {/* Blog */}
+      <Blog />
     </main>
   )
 }

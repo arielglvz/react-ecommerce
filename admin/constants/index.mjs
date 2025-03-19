@@ -144,7 +144,7 @@ export const highlightsProducts = [
 export const blogsData = [
   {
     _id: 4001,
-    image: "https://i.ibb.co/XbQf5HS/blogOne.webp",
+    image: "https://m-cdn.phonearena.com/images/reviews/253266-image/AA0-8576.webp",
     title: "iPhone 15 rear camera design will be available",
     _base: "Technology",
     description:
@@ -152,7 +152,7 @@ export const blogsData = [
   },
   {
     _id: 4002,
-    image: "https://i.ibb.co/wzNpcwp/blogTwo.webp",
+    image: "https://sony.scene7.com/is/image/sonyglobalsolutions/TVFY24_AE_Layout_2acc-image-m?$originalDimensions$&fmt=png-alpha",
     title: "Setup your surround sound speaker",
     _base: "Samrt thing",
     description:
@@ -160,7 +160,7 @@ export const blogsData = [
   },
   {
     _id: 4003,
-    image: "https://i.ibb.co/prdZ3s8/blog-Three.webp",
+    image: "https://modulepeak.com/wp-content/uploads/2022/02/blog_geart_02-870x563.jpg",
     title: "Hook up a receiver for your home theater",
     _base: "Life style",
     description:
