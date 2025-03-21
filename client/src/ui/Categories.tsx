@@ -16,7 +16,7 @@ const Categories = () => {
         const data = await getData(endpoint);
         setCategories(data);
       } catch (error) {
-        console.log('Error fetching data: ', error)
+        console.log('Error fetching data: ', error);
       }
     }
     

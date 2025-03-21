@@ -10,8 +10,6 @@ interface ItemsProps {
   currentItems: ProductProps[];
 }
 
-// interface PaginationProps {}
-
 const Items = ({ currentItems }: ItemsProps) => {
   return (
     <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5">
@@ -25,7 +23,8 @@ const Items = ({ currentItems }: ItemsProps) => {
 
 const Pagination = () => {
   const [products, setProducts] = useState([]);
-
+  // const [currentPage, setCurrentPage] = useState<number>(0); // * State for the currentPage
+  
   useEffect(() => {
     const fetchData = async () => {
       const endpoint = `${config?.baseUrl}/products`;
@@ -37,6 +36,13 @@ const Pagination = () => {
       }
     };
     fetchData();
+
+    // Restore current page from localStorage
+    const savedPage = localStorage.getItem("currentPage");
+    if (savedPage) {
+      // setCurrentPage(Number(savedPage)); //* Restore to saved page
+    }
+
   }, []);
   const itemsPerPage = 15;
   const [itemOffset, setItemOffset] = useState(0);
@@ -47,6 +53,9 @@ const Pagination = () => {
   const pageCount = Math.ceil(products.length / itemsPerPage);
 
   const handlePageClick = (event: any) => {
+    const newPage = event.selected;
+    // setCurrentPage(newPage); //* Update current page state
+    localStorage.setItem("currentPage", newPage.toString()); // Save to localStorage
     const newOffset = (event.selected * itemsPerPage) % products.length;
     const newStart = newOffset + 1;
     // console.log(
@@ -56,7 +65,14 @@ const Pagination = () => {
     setItemStart(newStart);
   };
 
-  console.log(products)
+  // *Update the offset when currentPage changes (e.g., restored from localStorage)
+  // useEffect(() => {
+  //   const newOffset = (currentPage * itemsPerPage) % products.length;
+  //   setItemOffset(newOffset);
+  //   setItemStart(newOffset + 1);
+  //   console.log(currentPage)
+  // }, [currentPage, products]);
+  
   return (
     <>
       <Items currentItems={currentItems} />
@@ -67,11 +83,12 @@ const Pagination = () => {
           pageRangeDisplayed={3}
           marginPagesDisplayed={2}
           pageCount={pageCount}
+          // forcePage={currentPage} //* Force display of the current page
           previousLabel=""
-          pageLinkClassName="w-9 h-9 border[1px] border-lightColor hover:border-gray-500 duration-300 flex justify-center items-center"
+          pageLinkClassName="w-9 h-9 border[1px] border-lightColor hover:border-gray-500 duration-300 flex justify-center items-center cursor-pointer hover:bg-skyText hover:text-white"
           pageClassName="mr-6"
           containerClassName="flex text-base font-semibold py-10"
-          activeClassName="bg-black text-white"
+          activeClassName="bg-black text-white hover:bg-skyText"
         />
         <p>
           Products from {itemStart} to {Math.min(endOffset, products?.length)}{" "}
