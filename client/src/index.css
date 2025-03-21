@@ -16,4 +16,5 @@
 html, 
 body {
   touch-action: manipulation;
+  scroll-behavior: smooth;
 }

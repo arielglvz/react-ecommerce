@@ -4,6 +4,7 @@ import AddToCartButton from '../AddToCartBtn';
 import { Button, Dialog, DialogPanel, DialogTitle, Transition, TransitionChild } from '@headlessui/react';
 import FormattedPrice from './FormattedPrice';
 import ProductCardSideNav from './ProductCardSideNav';
+import { useNavigate } from 'react-router-dom';
 
 interface Props {
   item: ProductProps;
@@ -11,6 +12,7 @@ interface Props {
 
 const ProductCard = ({ item }: Props) => {
   const [isOpen, setIsOpen] = useState(false);
+  const navigation = useNavigate();
 
   const open = () => {
     setIsOpen(true)
@@ -22,6 +24,10 @@ const ProductCard = ({ item }: Props) => {
 
   const percentage = ((item?.regularPrice - item?.discountedPrice) / item?.regularPrice) * 100
   
+  const handleProduct = () => {
+    navigation(`/product/${item?._id}`)
+  }
+
   return (
     <div className='border border-gray-200 rounded-lg p-1 overflow-hidden hover:border-black duration-200 cursor-pointer'>
       <div className="w-full h-60 relative p-2 group">
@@ -30,6 +36,7 @@ const ProductCard = ({ item }: Props) => {
           className="bg-black text-skyText absolute left-0 right-0 w-16 text-xs text-center py-1 rounded-md font-semibold inline-block z-10"
         >save {percentage.toFixed(0)}%</span>
         <img 
+          onClick={handleProduct}
           src={item?.images[0]} 
           alt="Product Image"
           className='w-full h-full rounded-md object-cover group-hover:scale-110 duration-300'
