@@ -5,12 +5,14 @@ import { Button, Dialog, DialogPanel, DialogTitle, Transition, TransitionChild }
 import FormattedPrice from './FormattedPrice';
 import ProductCardSideNav from './ProductCardSideNav';
 import { useNavigate } from 'react-router-dom';
+import { ProductProps } from '../type';
 
 interface Props {
   item: ProductProps;
+  setSearchText?: (text: string) => void;
 }
 
-const ProductCard = ({ item }: Props) => {
+const ProductCard = ({ item, setSearchText }: Props) => {
   const [isOpen, setIsOpen] = useState(false);
   const navigation = useNavigate();
 
@@ -25,7 +27,9 @@ const ProductCard = ({ item }: Props) => {
   const percentage = ((item?.regularPrice - item?.discountedPrice) / item?.regularPrice) * 100
   
   const handleProduct = () => {
-    navigation(`/product/${item?._id}`)
+    navigation(`/product/${item?._id}`);
+    // eslint-disable-next-line @typescript-eslint/no-unused-expressions
+    setSearchText && setSearchText("");
   }
 
   return (
