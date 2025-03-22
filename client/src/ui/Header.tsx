@@ -16,7 +16,8 @@ import { config } from '../config';
 import { getData } from '../lib';
 
 // Types
-import { CategoryProps } from '../type';
+import { CategoryProps, ProductProps } from '../type';
+import ProductCard from './ProductCard';
 
 const bottomNavigation = [
   { title: "Home", link: "/" },
@@ -28,8 +29,23 @@ const bottomNavigation = [
 ]
 
 const Header = () => {
-  const [searchText, setSearchText] = useState('');
+  const [searchText, setSearchText] = useState<string>('');
   const [categories, setCategories] = useState([]);
+  const [products, setProducts] = useState<ProductProps[]>([]);
+  const [filteredProducts, setFilteredProducts] = useState<ProductProps[]>([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const endpoint =`${config.baseUrl}/products`;
+      try {
+        const data = await getData(endpoint);
+        setProducts(data);
+      } catch (error) {
+        console.error("Error fetching product from Header: ", error);
+      }
+    }
+    fetchData();
+  },[])
 
   useEffect(() => {
     const fetchData = async () => {
@@ -41,10 +57,15 @@ const Header = () => {
         console.error('Error fetching data: ', error)
       }
     }
-
     fetchData()
-  }, [])
-
+  }, []);
+  
+  useEffect(() => {
+    const filtered = products.filter((product:ProductProps) => 
+      product.name.toLowerCase().includes(searchText.toLowerCase()));
+      setFilteredProducts(filtered);
+  }, [searchText])
+  
   return (
     <div className='w-full bg-whiteText md:sticky md:top-0 z-50'>
       <div className='max-w-screen-xl mx-auto h-20 flex items-center justify-between px-4'>
@@ -55,16 +76,47 @@ const Header = () => {
           <input 
             type="text" 
             onChange={(e) => setSearchText(e.target.value)}
+            value={searchText}
             placeholder='Search products' 
             className='w-full flex-1 rounded-full text-gray-900 text-lg placeholder:text-base 
             placeholder:tracking-wide shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 
             placeholder:font-normal focus:ring-darkText sm:text-sm px-4 py-2'
           />
           { searchText 
-            ? <IoClose className='absolute top-2 right-4 text-xl hover:text-red-500 cursor-pointer duration-200'/>
+            ? <IoClose 
+                onClick={() => setSearchText('')}
+                className='absolute top-2 right-4 text-xl hover:text-red-500 cursor-pointer duration-200'
+              />
             : <IoSearchOutline className='absolute top-2 right-4 text-xl cursor-pointer duration-200'/>
           }
         </div> 
+        {/* searched products here */}
+        {searchText && 
+          (
+            <div className="absolute left-0 top-20 w-full mx-auto max-h-[500px] px-10 py-5 bg-white z-20 overflow-y-scroll text-black-shadow-lg shadow-skyText scrollbar-hide">
+              {filteredProducts.length > 0 
+                ? (
+                  <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-5 overflow-x-auto whitespace-nowrap'>
+                    {filteredProducts.map((product:ProductProps) => (
+                      <ProductCard key={product?._id} item={product} />
+                    ))}
+                  </div>
+                )
+                : (
+                  <div className="py-10 bg-gray-50 w-full flex items-center justify-center border border-gray-600 rounded-md">
+                    <p className='text-xl font-normal'>
+                      Nothing matches with your search keywords {" "}
+                      <span className='underline underline-offset-2 decoration-[1px] text-red-500 font-semibold'>
+                        {`${searchText}`}
+                      </span>. 
+                      Please try again
+                    </p>
+                  </div>
+                )
+              }
+            </div>
+          )
+        }
         {/* MenuBar */}
         <div className='flex items-center gap-x-6 text-2xl'>
           <Link to={'/profile'}>
@@ -87,7 +139,7 @@ const Header = () => {
           <Menu>
             <MenuButton 
               className='inline-flex items-center gap-2 rounded-md border border-gray-400
-               hover:border-white py-1.5 px-3 font-semibold text-gray-300 hover:text-white'>
+               hover:border-white py-1.5 px-4 font-semibold text-gray-300 hover:text-white'>
               Select Category <FaChevronDown className='text-base mt-1'/>
             </MenuButton>
             <Transition
@@ -106,7 +158,7 @@ const Header = () => {
               {categories.map((item:CategoryProps) => ( 
                 <MenuItem key={item?._id}>
                   <Link to={`/category/${item?._base}`} 
-                    className='flex w-full items-center gap-2 rounded-lg py-2 px-3 
+                    className='flex w-full items-center gap-2 rounded-lg py-2 px-4 
                     data-[focus]:bg-white/20 tracking-wide'
                   >
                     <img src={item?.image} alt="categoryImage" className='w-6 h-6 rounded-md bg-whiteText' />

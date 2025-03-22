@@ -18,3 +18,7 @@ body {
   touch-action: manipulation;
   scroll-behavior: smooth;
 }
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
