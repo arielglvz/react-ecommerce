@@ -11,7 +11,7 @@ import { MdOutlineStarOutline } from 'react-icons/md';
 import { FaRegEye } from 'react-icons/fa';
 import FormattedPrice from '../ui/FormattedPrice';
 import { IoClose } from 'react-icons/io5';
-import AddToCartBtn from '../AddToCartBtn';
+import AddToCartBtn from '../ui/AddToCartBtn';
 import { productPayment } from '../assets';
 import ProductCard from '../ui/ProductCard';
 import CategoryFilters from '../ui/CategoryFilters';
@@ -165,10 +165,10 @@ const Product = () => {
                     <span className='font-medium'>{productData?.category}</span>
                   </p>
                   <AddToCartBtn
-                  product={productData}
-                  title="Buy now"
-                  className="w-[100%] bg-black/80 py-3 text-base text-gray-200 hover:scale-100 hover:text-white duration-200 mt-4"
-                />
+                    product={productData}
+                    title="Buy now"
+                    className="w-[100%] bg-black/80 py-3 text-base text-gray-200 hover:scale-100 hover:text-white duration-200 mt-4"
+                  />
                   <div className="bg-[#f7f7f7] p-5 rounded-md flex flex-col items-center justify-center gap-2">
                     <img 
                       src={productPayment} 
