@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { MdOutlineStarOutline } from 'react-icons/md';
-import AddToCartButton from '../AddToCartBtn';
+import AddToCartButton from '../ui/AddToCartBtn';
 import { Button, Dialog, DialogPanel, DialogTitle, Transition, TransitionChild } from '@headlessui/react';
 import FormattedPrice from './FormattedPrice';
 import ProductCardSideNav from './ProductCardSideNav';
@@ -59,7 +59,7 @@ const ProductCard = ({ item, setSearchText }: Props) => {
           <MdOutlineStarOutline />
           <MdOutlineStarOutline />
         </div>
-        <AddToCartButton />
+        <AddToCartButton product={item}/>
       </div>
       <Transition 
         appear

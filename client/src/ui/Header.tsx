@@ -18,6 +18,7 @@ import { getData } from '../lib';
 // Types
 import { CategoryProps, ProductProps } from '../type';
 import ProductCard from './ProductCard';
+import { store } from '../lib/store';
 
 const bottomNavigation = [
   { title: "Home", link: "/" },
@@ -33,6 +34,7 @@ const Header = () => {
   const [categories, setCategories] = useState([]);
   const [products, setProducts] = useState<ProductProps[]>([]);
   const [filteredProducts, setFilteredProducts] = useState<ProductProps[]>([]);
+  const { cartProduct } = store();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -130,7 +132,9 @@ const Header = () => {
           <Link to={'/cart'} className='relative block'>
             <FiShoppingBag className='hover:text-skyText duration-200 cursor-pointer'/>
             <span className='inline-flex items-center justify-center bg-redText text-whiteText 
-            absolute -top-1 -right-2 text-[9px] rounded-full w-4 h-4'>0</span>
+            absolute -top-1 -right-2 text-[9px] rounded-full w-4 h-4'>
+              {cartProduct?.length > 0 ? cartProduct?.length : '0' }
+            </span>
           </Link>
         </div>
       </div>

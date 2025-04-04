@@ -407,9 +407,9 @@ export const products = [
     _id: 2011,
     name: "DIDSeth Pan Tilt Security Light Camera Full HD 1080P Wireless Wi-Fi IP Camera Home Dome Surveillance Cameras",
     images: [
-      "https://www.gulpofficial.com/wp-content/uploads/2022/02/product_gear_27_1-600x600.jpg",
-      "https://www.gulpofficial.com/wp-content/uploads/2022/02/product_gear_27_2-600x600.jpg",
-      "https://www.gulpofficial.com/wp-content/uploads/2022/02/product_gear_27_3-600x600.jpg",
+      "https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_gear_27_1-600x600.jpg",
+      "https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_gear_27_2-600x600.jpg",
+      "https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_gear_27_3-600x600.jpg",
     ],
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis repellendus dolore, facilis iste obcaecati ab nesciunt ducimus quidem molestias aut? Aut vitae error delectus itaque facilis obcaecati nemo dolore cumque. Blanditiis minus corrupti dignissimos, voluptas iusto, eligendi maiores doloremque aliquid mollitia in hic dolores pariatur doloribus dolorum totam. Facilis, dignissimos.",
@@ -419,7 +419,7 @@ export const products = [
     rating: 3.8,
     reviews: 250,
     category: "Cameras & Photos",
-    colors: ["white", "white", "white"],
+    colors: ["white"],
     brand: "Lorem ipsum dolor sit",
     isStock: true,
     overView: "Security & Protection",
