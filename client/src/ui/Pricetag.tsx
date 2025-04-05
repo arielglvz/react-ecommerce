@@ -8,7 +8,7 @@ interface Props {
   className?: string
 }
 
-const Pricetag = ({ regularPrice, discountedPrice, className }: Props) => {
+const PriceTag = ({ regularPrice, discountedPrice, className }: Props) => {
   return (
     <div className={twMerge('flex items-center gap-2', className)}>
       <p className='line-through text-gray-500 font-medium'>
@@ -21,4 +21,4 @@ const Pricetag = ({ regularPrice, discountedPrice, className }: Props) => {
   )
 }
 
-export default Pricetag
+export default PriceTag

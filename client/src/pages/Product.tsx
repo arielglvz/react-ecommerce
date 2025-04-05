@@ -6,7 +6,7 @@ import { getData } from '../lib';
 import Loading from '../ui/Loading';
 import Container from '../ui/Container';
 import _ from 'lodash';
-import Pricetag from '../ui/Pricetag';
+import PriceTag from '../ui/PriceTag';
 import { MdOutlineStarOutline } from 'react-icons/md';
 import { FaRegEye } from 'react-icons/fa';
 import FormattedPrice from '../ui/FormattedPrice';
@@ -86,7 +86,7 @@ const Product = () => {
               <div className="flex flex-col gap-4">
                 <h2 className='text-3xl font-bold'>{productData?.name}</h2>
                 <div className="flex items-center justify-between">
-                  <Pricetag 
+                  <PriceTag 
                     regularPrice={productData?.regularPrice}
                     discountedPrice={productData?.discountedPrice}
                     className='text-xl'

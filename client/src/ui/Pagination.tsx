@@ -58,7 +58,7 @@ const Pagination = () => {
     localStorage.setItem("currentPage", newPage.toString()); // Save to localStorage
     const newOffset = (event.selected * itemsPerPage) % products.length;
     const newStart = newOffset + 1;
-    // console.log(
+    //console.log(
     //   `User requested page number ${event.selected}, which is offset ${newOffset}`
     // );
     setItemOffset(newOffset);

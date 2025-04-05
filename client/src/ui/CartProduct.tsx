@@ -39,7 +39,7 @@ const CartProduct = ({product}:{ product:ProductProps}) => {
               <p className="text-base font-semibold">
                 <FormattedPrice amount={product?.discountedPrice * product?.quantity} />
               </p>
-                <AddToCartBtn product={product}/>
+                <AddToCartBtn product={product} showPrice={false}/>
             </div>
           </div>
           <div className="mt-4 sm:mt-0 sm:pr-9">
