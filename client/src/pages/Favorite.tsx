@@ -3,8 +3,8 @@ import React from 'react'
 const Favorite = () => {
   return (
     <div>
-      Favorite
-      {/*  Test Push */}
+      Favorite 
+      {/* Test 2 */}
     </div>
   )
 }
