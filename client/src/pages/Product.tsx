@@ -66,7 +66,7 @@ const Product = () => {
           {!!id && productData && _.isEmpty(allProducts) ? (
             <div className='grid grid-cols-1 md:grid-cols-2 gap:10'>
               <div className="flex flex-start">
-                <div className="">
+                <div>
                   {productData?.images?.map((item, index) => (
                     <img 
                       src={item} 
@@ -79,7 +79,7 @@ const Product = () => {
                     />
                   ))}
                 </div>
-                <div className="">
+                <div>
                   <img src={imgUrl} alt="main image" />
                 </div>
               </div>
