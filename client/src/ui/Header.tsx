@@ -123,8 +123,8 @@ const Header = () => {
         <div className="flex items-center gap-x-6 text-2xl">
           <Link to={"/profile"}>
             {
-              currentUser?.avatar 
-              ? <img src={currentUser?.avatar} alt="avatar" className="w-10 min-w-10 h-10 rounded-full object-cover"/>
+              currentUser //* ?.avatar <-- I think is better
+              ? <img src={currentUser?.avatar || 'https://static.vecteezy.com/system/resources/previews/024/677/961/non_2x/3d-icon-of-man-profile-free-png.png'} alt="avatar" className="w-10 min-w-10 h-10 rounded-full object-cover"/>
               : <FiUser className="hover:text-skyText duration-200 cursor-pointer"/>
             }
           </Link>

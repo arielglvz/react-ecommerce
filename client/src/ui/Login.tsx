@@ -95,7 +95,7 @@ const Login = ({ setLogin } : { setLogin: any }) => {
         Does not have an Account{" "}
         <button
           onClick={() => setLogin(false)}
-          className="text-gray-200 font-semibold underline underline-offset-2 decoration-[1px] hover:text-white duration-200"
+          className="text-gray-200 font-semibold underline underline-offset-2 decoration-[1px] hover:text-white duration-200 cursor-pointer"
         >
           Register
         </button>

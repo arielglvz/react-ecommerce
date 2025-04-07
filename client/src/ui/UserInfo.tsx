@@ -13,14 +13,14 @@ const UserInfo = ({ currentUser } : UserTypes ) => {
             src={
               currentUser?.avatar
                 ? currentUser?.avatar
-                : "https://i.ibb.co/mJRkRRV/png-clipart-profile-logo-computer-icons-user-user-blue-heroes-thumbnail.png"
+                : "https://static.vecteezy.com/system/resources/previews/024/677/961/non_2x/3d-icon-of-man-profile-free-png.png"
             }
             alt="userImage"
             className="w-40 h-40 rounded-full border border-gray-700 object-cover p-1"
           />
           <div className="text-start flex-1">
             <h2 className="text-xl font-bold tracking-tight sm:text-4xl">
-              Welcome back, dear{" "}
+              Welcome back,{" "}
               <span className="underline underline-offset-2 decoration-[1px] font-medium">
                 {currentUser?.firstName} {currentUser?.lastName}
               </span>
