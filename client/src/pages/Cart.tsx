@@ -7,6 +7,7 @@ import FormattedPrice from "../ui/FormattedPrice";
 import { FaQuestionCircle } from "react-icons/fa";
 import CheckoutBtn from "../ui/CheckoutBtn";
 
+// Test push 250408
 const Cart = () => {
   const [totalAmt, setTotalAmt] = useState({
       regular: 0,
