@@ -12,7 +12,7 @@ const Cart = () => {
       regular: 0,
       discounted: 0
     })
-    const { cartProduct } = store();
+    const { cartProduct, currentUser } = store();
     const shippingAmt  = 25;
     const taxAmt = 15;
 
