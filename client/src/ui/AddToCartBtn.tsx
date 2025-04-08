@@ -4,7 +4,7 @@ import { ProductProps } from '../type';
 import { store } from '../lib/store';
 import toast from 'react-hot-toast';
 import { FaMinus, FaPlus } from 'react-icons/fa';
-import PriceTag from './PriceTag'
+import PriceTag from './PriceTag';
 
 
 const AddToCartBtn = ({
@@ -36,7 +36,7 @@ const AddToCartBtn = ({
     }
   };
   
-  const handleDeleteProduct = (id:number) => {
+  const handleDeleteProduct = () => {
     if (existingProduct) {
       if (existingProduct?.quantity > 1) {
         decreaseQuantity(existingProduct?._id);
