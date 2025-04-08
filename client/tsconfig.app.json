@@ -8,7 +8,7 @@
     "skipLibCheck": true,
 
     /* Bundler mode */
-    "moduleResolution": "bundler",
+    "moduleResolution": "node",  // Change from 'bundler' to 'node'
     "allowImportingTsExtensions": true,
     "isolatedModules": true,
     "moduleDetection": "force",
@@ -26,5 +26,5 @@
       "*": ["node_modules/*", "src/*"]
     }
   },
-  "include": ["src"]
+  "include": ["src/**/*"]
 }
