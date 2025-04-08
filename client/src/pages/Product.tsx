@@ -14,7 +14,7 @@ import AddToCartBtn from "../ui/AddToCartBtn";
 import { productPayment } from "../assets";
 import ProductCard from "../ui/ProductCard";
 import CategoryFilters from "../ui/CategoryFilters";
-import PriceTag from "../ui/PriceTag";
+import PriceTag1 from "../ui/PriceTag1";
 
 const Product = () => {
   const [productData, setProductData] = useState<ProductProps | null>(null);
@@ -86,7 +86,7 @@ const Product = () => {
               <div className="flex flex-col gap-4">
                 <h2 className="text-3xl font-bold">{productData?.name}</h2>
                 <div className="flex items-center justify-between">
-                  <PriceTag 
+                  <PriceTag1 
                     regularPrice={productData?.regularPrice}
                     discountedPrice={productData?.discountedPrice}
                     className="text-xl"

@@ -4,7 +4,7 @@ import { ProductProps } from "../type";
 import { store } from "../lib/store";
 import toast from "react-hot-toast";
 import { FaMinus, FaPlus } from "react-icons/fa";
-import PriceTag from "./PriceTag";
+import PriceTag1 from "./PriceTag1";
 
 const AddToCartBtn = ({
   className,
@@ -73,7 +73,7 @@ const AddToCartBtn = ({
     <>
       {showPrice && (
         <div className="">
-          <PriceTag 
+          <PriceTag1
             regularPrice={getRegularPrice()}
             discountedPrice={getDiscountedPrice()}
           />
