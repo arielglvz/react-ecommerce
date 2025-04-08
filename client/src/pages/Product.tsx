@@ -5,7 +5,7 @@ import { ProductProps } from "../type";
 import { getData } from "../lib";
 import Loading from "../ui/Loading";
 import Container from "../ui/Container";
-import * as _ from 'lodash'
+import * as _ from 'lodash';
 import { MdOutlineStarOutline } from "react-icons/md";
 import { FaRegEye } from "react-icons/fa";
 import FormattedPrice from "../ui/FormattedPrice";
