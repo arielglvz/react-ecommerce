@@ -4,7 +4,7 @@ import { ProductProps } from "../type";
 import { store } from "../lib/store";
 import toast from "react-hot-toast";
 import { FaMinus, FaPlus } from "react-icons/fa";
-import PriceTag from "./PriceTag.tsx";
+import PriceTag from "./PriceTag";
 
 const AddToCartBtn = ({
   className,

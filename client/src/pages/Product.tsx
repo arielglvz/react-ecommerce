@@ -5,7 +5,7 @@ import { ProductProps } from "../type";
 import { getData } from "../lib";
 import Loading from "../ui/Loading";
 import Container from "../ui/Container";
-import _ from "lodash";
+import * as _ from 'lodash'
 import { MdOutlineStarOutline } from "react-icons/md";
 import { FaRegEye } from "react-icons/fa";
 import FormattedPrice from "../ui/FormattedPrice";
@@ -111,14 +111,14 @@ const Product = () => {
                   You are saving{" "}
                   <span className="text-base font-bold text-green-500">
                     <FormattedPrice
-                      amount={
-                        //! NOTE: You have to make sure it is not null if you want to use non-null assertion [NOT GOOD Practice]
-                        //* productData?.regularPrice! - productData?.discountedPrice!
-                        productData?.regularPrice - productData?.discountedPrice
-                      }
-                      />{" "}
+                      //! NOTE: You have to make sure it is not null if you want to use non-null assertion [NOT GOOD Practice]
+                      //* productData?.regularPrice! - productData?.discountedPrice!
+                      amount={productData?.regularPrice && productData?.discountedPrice 
+                        ? productData.regularPrice - productData.discountedPrice 
+                        : 0}
+                    />
                   </span>
-                    upon purchase
+                  upon purchase
                 </p>
                 <div>
                   { color && (
