@@ -1,4 +1,3 @@
-import React from 'react'
 import { HiArrowLeft } from 'react-icons/hi'
 
 const CustomLeftArrow = ({ onClick }: any) => {

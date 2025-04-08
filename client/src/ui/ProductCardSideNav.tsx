@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { FaRegEye, FaRegStar, FaStar } from 'react-icons/fa'
 import { LuArrowLeftRight } from 'react-icons/lu'
 import { ProductProps } from '../type'

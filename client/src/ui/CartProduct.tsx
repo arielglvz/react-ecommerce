@@ -1,4 +1,3 @@
-import React from 'react'
 import { ProductProps } from '../type'
 import { Link } from 'react-router-dom'
 import FormattedPrice from './FormattedPrice'

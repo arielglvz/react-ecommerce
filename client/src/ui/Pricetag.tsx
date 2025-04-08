@@ -1,4 +1,3 @@
-import React from 'react'
 import FormattedPrice from './FormattedPrice'
 import { twMerge } from 'tailwind-merge'
 

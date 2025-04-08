@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 import { store } from "../lib/store"
 import Container from "../ui/Container";
 import { Link } from "react-router-dom";

@@ -1,4 +1,3 @@
-import React from 'react'
 import Container from '../ui/Container'
 import { store } from '../lib/store';
 import FavoriteProduct from '../ui/FavoriteProduct';

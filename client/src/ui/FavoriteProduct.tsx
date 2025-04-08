@@ -1,4 +1,3 @@
-import React, { useEffect } from "react"
 import { ProductProps } from "../type"
 import { MdClose } from "react-icons/md"
 import { store } from "../lib/store"

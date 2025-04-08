@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { MdOutlineStarOutline } from 'react-icons/md';
 import AddToCartButton from '../ui/AddToCartBtn';
 import { Button, Dialog, DialogPanel, DialogTitle, Transition, TransitionChild } from '@headlessui/react';

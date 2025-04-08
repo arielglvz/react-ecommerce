@@ -1,4 +1,3 @@
-import React from 'react'
 import { ProductProps } from '../type'
 import { store } from '../lib/store'
 import { loadStripe } from '@stripe/stripe-js'
