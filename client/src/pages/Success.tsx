@@ -20,8 +20,14 @@ const Success = () => {
     } else if (cartProduct.length > 0) {
       const saveOrder = async () => {
         try {
+          // Ensure currentUser?.email is not undefined
+          if (!currentUser?.email) {
+            console.error("User email is undefined");
+            return;
+          }
+
           setLoading(true);
-          const orderRef = doc(db, "orders", currentUser?.email || null);
+          const orderRef = doc(db, "orders", currentUser?.email);
           const docSnap = await getDoc(orderRef);
           if (docSnap.exists()) {
             // Document exists, update the orderItems array
@@ -58,7 +64,7 @@ const Success = () => {
       };
       saveOrder();
     }
-  }, [sessionId, navigate, currentUser, cartProduct]);
+  }, [sessionId, navigate, currentUser, cartProduct, currentUser?.email]);
 
   return (
     <Container>

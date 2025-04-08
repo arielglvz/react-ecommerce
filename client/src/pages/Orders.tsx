@@ -10,20 +10,21 @@ import { FaMinus, FaPlus } from 'react-icons/fa';
 import { OrderTypes, ProductProps } from '../type';
 import FormattedPrice from '../ui/FormattedPrice';
 
-interface OrderItem {
-  discountedPrice: number;
-  quantity: number;
-}
-
 const Orders = () => {
   const { currentUser } = store();
-  const [orders, setOrders] = useState([]);
+  const [orders, setOrders] = useState<OrderTypes[]>([]);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const getData = async () => {
       setLoading(true);
       try {
+        // Ensure currentUser?.email is not undefined
+        if (!currentUser?.email) {
+          console.error("User email is undefined");
+          return;
+        }
+
         const docRef = doc(db, "orders", currentUser?.email);
         const docSnap = await getDoc(docRef);
         if(docSnap.exists()) {
@@ -39,7 +40,7 @@ const Orders = () => {
       }
     }
     getData();
-  }, [])
+  }, [currentUser?.email]); // Dependency on email to rerun the effect if it changes
   
   return (
     <Container>
@@ -70,10 +71,11 @@ const Orders = () => {
               </p>
               <div className="flex flex-col gap-3">
                 <div className="space-y-6 divide-y divide-gray-900/10">
-                  {orders?.map((order: OrderTypes | undefined) => {
-                    const totalAmt: number = order?.orderItems.reduce(
-                      (acc: number, item: OrderItem) => acc + (item?.discountedPrice * item?.quantity || 0),
-                      0 ) ?? 0; //* Ensure 'totalAmt' is always a number
+                  {orders?.map((order: OrderTypes) => {
+                   const totalAmt: number = order?.orderItems.reduce(
+                    (acc: number, item: ProductProps) => acc + (item?.discountedPrice * item?.quantity || 0),
+                    0
+                  ); //* Ensure 'totalAmt' is always a number
                       
                     return (
                       <Disclosure 

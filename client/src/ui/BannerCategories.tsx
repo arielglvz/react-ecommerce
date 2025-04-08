@@ -5,8 +5,8 @@ import { config } from '../config';
 import { getData } from '../lib';
 import { CategoryProps } from '../type';
 import { Link } from 'react-router-dom';
-import CustomRightArrow from './customRightArrow';
-import CustomLeftArrow from './customLeftArrow';
+import CustomRightArrow from './CustomRightArrow';
+import CustomLeftArrow from './CustomLeftArrow';
 
 // import CustomRightArrow from "./CustomRightArrow";
 // import CustomLeftArrow from "./CustomLeftArrow";
