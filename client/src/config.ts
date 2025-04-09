@@ -7,7 +7,7 @@ const checkConfig = (server: string): Config | {} => {
   switch (server) {
     case "production":
       config = {
-        baseUrl: "https://react-ecommerce-theta-plum.vercel.app", // ! remove the '/' at the end of the link otherwise it will not work
+        baseUrl: "https://react-ecommerce-theta-plum.vercel.app/", // ! remove the '/' at the end of the link otherwise it will not work
       };
       break;
     case "local":
