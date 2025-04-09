@@ -53,10 +53,16 @@ const Header = () => {
     const fetchData = async () => {
       const endpoint = `${config?.baseUrl}/categories`;
       try {
-        const data = await getData(endpoint);
-        setCategories(data);
+        const data: [] = await getData(endpoint);
+        if(Array.isArray(data)) {
+          setCategories(data);
+        } else {
+          console.error("Expected an array, but got:", data);
+          setCategories([]); // Fallback to empty array
+        }
       } catch (error) {
         console.error("Error fetching data: ", error)
+        setCategories([]); // Fallback to empty array 
       }
     }
     fetchData()
@@ -147,10 +153,9 @@ const Header = () => {
       <div className="w-full bg-darkText text-whiteText">
         <Container className="py-2 max-w-4xl flex items-center gap-5 justify-center">
           <Menu>
-            <MenuButton 
-              className="inline-flex items-center gap-2 rounded-md border border-gray-400
-               hover:border-white py-1.5 px-4 font-semibold text-gray-300 hover:text-white">
-              Select Category <FaChevronDown className="text-base mt-1"/>
+            <MenuButton className="inline-flex items-center gap-2 rounded-md border border-gray-400 hover:border-white py-1.5 px-4 font-semibold text-gray-300 hover:text-white">
+              Select Category 
+              <FaChevronDown className="text-base mt-1"/>
             </MenuButton>
             <Transition
               enter="transition ease-out duration-75"
@@ -165,17 +170,23 @@ const Header = () => {
                 className="w-52 origin-top-right rounded-xl border-white/5 bg-black p-1 text-sm/6 
                 text-gray-300 [--anchor-gap-var(--spacing-1)] focus:outline-none hover:text-whiteText z-50"
               >
-              {categories.map((item:CategoryProps) => ( 
-                <MenuItem key={item?._id}>
-                  <Link to={`/category/${item?._base}`} 
-                    className="flex w-full items-center gap-2 rounded-lg py-2 px-4 
-                    data-[focus]:bg-white/20 tracking-wide"
-                  >
-                    <img src={item?.image} alt="categoryImage" className="w-6 h-6 rounded-md bg-whiteText" />
-                    {item?.name}
-                  </Link>
-                </MenuItem>
-              ))}
+                {Array.isArray(categories) && categories.length > 0 ? (
+                  categories.map((item: CategoryProps) => (
+                    <MenuItem key={item?._id}>
+                      <Link to={`/category/${item?._base}`} 
+                        className="flex w-full items-center gap-2 rounded-lg py-2 px-4 
+                        data-[focus]:bg-white/20 tracking-wide"
+                      >
+                        <img src={item?.image} alt="categoryImage" className="w-6 h-6 rounded-md bg-whiteText" />
+                        {item?.name}
+                      </Link>
+                    </MenuItem>
+                ))
+                ): (
+                  <div className="py-10 bg-gray-50 w-full flex items-center justify-center border border-gray-600 rounded-md">
+                    <p className="text-xl font-normal">No categories available</p>
+                  </div>
+                )}
               </MenuItems>
             </Transition>
           </Menu>

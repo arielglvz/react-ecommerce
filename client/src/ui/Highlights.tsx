@@ -12,10 +12,16 @@ const Highlights = () => {
     const fetchData = async () => {
       const endpoint = `${config?.baseUrl}/highlights`
       try {
-          const data = await getData(endpoint);
-          setHighlightsData(data);
+          const data : [] = await getData(endpoint);
+          if (Array.isArray(data)) {
+            setHighlightsData(data);
+          } else {
+            console.error("Expected an array, but got:", data);
+            setHighlightsData([]); // Fallback to empty array
+          }
       } catch (error) {
         console.error('Error Fetching Highlights Data: ', error)
+        setHighlightsData([]); // Fallback to empty array
       }
     }
 
