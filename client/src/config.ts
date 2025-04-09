@@ -23,5 +23,5 @@ const checkConfig = (server: string): Config | {} => {
 }
 
 // Dynamically set `selectServer` based on the environment
-const selectServer = process.env.NODE_ENV === "production" ? "production" : "local";
+const selectServer = "production";
 export const config = checkConfig(selectServer) as Config;
