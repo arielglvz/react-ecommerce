@@ -12,7 +12,7 @@ const checkConfig = (server: string): Config | {} => {
       break;
     case "local":
       config = {
-        baseUrl: 'http://localhost:8080dsads',
+        baseUrl: 'http://localhost:8080',
       };
       break;
     default:
@@ -22,5 +22,6 @@ const checkConfig = (server: string): Config | {} => {
   return config;
 }
 
-export const selectServer = "local";
+// Dynamically set `selectServer` based on the environment
+const selectServer = process.env.NODE_ENV === "production" ? "production" : "local";
 export const config = checkConfig(selectServer) as Config;
