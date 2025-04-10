@@ -20,7 +20,7 @@ const Blog = () => {
     }
 
     fetchData();
-  }, [getData])
+  }, [])
 
   return (
     <Container>
