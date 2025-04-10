@@ -7,7 +7,7 @@ const checkConfig = (server: string): Config | {} => {
   switch (server) {
     case "production":
       config = {
-        baseUrl: "https://supergearclone.vercel.app", // ! remove the '/' at the end of the link otherwise it will not work
+        baseUrl: "https://react-ecommerce-theta-plum.vercel.app", // remove the '/' at the end of the link otherwise it will not work
       };
       break;
     case "local":
@@ -16,12 +16,12 @@ const checkConfig = (server: string): Config | {} => {
       };
       break;
     default:
-      config = {};
+      // config = {};
       break;
   }
   return config;
-}
+};
 
 // Dynamically set `selectServer` based on the environment
-const selectServer = "production";
+export const selectServer = "local";
 export const config = checkConfig(selectServer) as Config;
