@@ -9,7 +9,7 @@ router.get("/categories", (req, res) => {
 
 router.get("/categories/:id", (req, res) => {
   const id = req.params.id;
-  const matchedProducts = products?.filter((item) => item?._base === id);
+  const matchedProducts = products?.filter((item) => item?.categoryId === id);
 
   if (!matchedProducts || matchedProducts.length === 0) {
     return res
