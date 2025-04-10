@@ -4,6 +4,9 @@ interface Config {
 
 const checkConfig = (server: string): Config | {} => {
   let config: Config | {} = {};
+  if (server === "disabled") {
+    return {}; // return empty config to disable any setup
+  }
   switch (server) {
     case "production":
       config = {
