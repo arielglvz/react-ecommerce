@@ -23,5 +23,5 @@ const checkConfig = (server: string): Config | {} => {
 };
 
 // Dynamically set `selectServer` based on the environment
-export const selectServer = "local";
+export const selectServer = "production";
 export const config = checkConfig(selectServer) as Config;
