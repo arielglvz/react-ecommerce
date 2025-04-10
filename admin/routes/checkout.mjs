@@ -31,9 +31,9 @@ router.post('/checkout', async (req, res) => {
       line_items: extractingItems,
       mode: 'payment',
       // success_url: 'http://localhost:5173/success?session_id={CHECKOUT_SESSION_ID}',
-      success_url: 'https://supergear-clone.vercel.app/success?session_id={CHECKOUT_SESSION_ID}',
+      success_url: 'https://react-ecommerce-ofnn.vercel.app//success?session_id={CHECKOUT_SESSION_ID}',
       // cancel_url: 'http://localhost:5173/cancel',
-      cancel_url: 'https://supergear-clone.vercel.app/cancel',
+      cancel_url: 'https://react-ecommerce-ofnn.vercel.app//cancel',
       metadata: {
         email,
       }
