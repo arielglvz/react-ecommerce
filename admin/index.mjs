@@ -7,7 +7,15 @@ import path from "path";
 import { readdirSync } from "fs";
 
 const port = process.env.PORT || 8000;
-app.use(cors());
+
+// Define your CORS options
+const corsOptions = {
+  origin: ['http://localhost:5173', 'https://react-ecommerce-ofnn-ieljohn10s-projects.vercel.app'], // Allowed origins
+  optionsSuccessStatus: 200, // Response status for successful OPTIONS requests
+};
+
+// Use cors with the defined options
+app.use(cors(corsOptions));
 app.use(express.json());
 
 const __filename = fileURLToPath(import.meta.url);

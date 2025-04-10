@@ -20,8 +20,9 @@ const Blog = () => {
     }
 
     fetchData();
-  }, [])
+  }, [getData])
 
+  console.log(blogsData)
   return (
     <Container>
       <div>

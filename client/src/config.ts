@@ -25,5 +25,5 @@ const checkConfig = (server: string): Config | {} => {
   return config;
 }
 
-export const selectServer = "local";
+export const selectServer = "production";
 export const config = checkConfig(selectServer) as Config;
