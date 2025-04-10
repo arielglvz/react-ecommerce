@@ -10,7 +10,7 @@ const port = process.env.PORT || 8000;
 
 // Define your CORS options
 const corsOptions = {
-  origin: ['http://localhost:5173', 'https://react-ecommerce-ofnn-ieljohn10s-projects.vercel.app'], // Allowed origins
+  origin: ['http://localhost:5173', 'https://react-ecommerce-ofnn.vercel.app'], // Allowed origins
   optionsSuccessStatus: 200, // Response status for successful OPTIONS requests
 };
 
